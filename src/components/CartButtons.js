@@ -10,7 +10,7 @@ const CartButtons = () => {
   return (
     <Wrapper className="cart-btn-wrapper">
       <Link to="/cart" className="cart-btn">
-        CartButtons
+        Cart
         <span className="cart-container">
           <FaShoppingCart />
           <span className="cart-value">12</span>
