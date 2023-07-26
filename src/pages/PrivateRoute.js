@@ -6,9 +6,10 @@ import { useUserContext } from "../context/user_context";
 
 const PrivateRoute = ({ children }) => {
   const { user } = useAuth0();
-  if (!user) {
-    return <Navigate to="/" />;
-  }
+
+  // if (!user) {
+  //   return <Navigate to="/" />;
+  // }
   return children;
 };
 export default PrivateRoute;
