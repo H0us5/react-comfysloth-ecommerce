@@ -112,7 +112,32 @@ const Filters = () => {
               })}
             </div>
           </div>
+          <div className="form-control">
+            <h5>price</h5>
+            <p className="price">{formatPrice(price)}</p>
+            <input
+              type="range"
+              name="price"
+              onChange={updateFilters}
+              min={min_price}
+              max={max_price}
+              value={price}
+            />
+          </div>
+          <div className="form-control shipping">
+            <label htmlFor="shipping">free shipping</label>
+            <input
+              type="checkbox"
+              name="shipping"
+              id="shipping"
+              onChange={updateFilters}
+              checked={shipping}
+            />
+          </div>
         </form>
+        <button type="button" className="clear-btn" onClick={clearFilters}>
+          clear filters
+        </button>
       </div>
     </Wrapper>
   );
@@ -196,11 +221,13 @@ const Wrapper = styled.section`
     margin-bottom: 0.25rem;
   }
   .shipping {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    /* display: grid;
+    grid-template-columns: auto 1fr; */
+    display: flex;
     align-items: center;
+    gap: 0.5rem;
     text-transform: capitalize;
-    column-gap: 0.5rem;
+    /* column-gap: 0.5rem; */
     font-size: 1rem;
     max-width: 200px;
   }
