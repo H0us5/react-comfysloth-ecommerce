@@ -33,7 +33,7 @@ const cart_reducer = (state, action) => {
         price: product.price,
         max: product.stock,
       };
-      return { ...state, cart: { ...state.cart, newItem } };
+      return { ...state, cart: [...state.cart, newItem] };
     }
   }
   throw new Error(`No Matching "${action.type}" - action type`);
